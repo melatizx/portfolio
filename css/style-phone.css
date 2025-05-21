@@ -218,7 +218,7 @@ header{
 }
 .modal-btn-final{
     width: 24%;
-    height: 30px;
+    height: 7vw;
     font-family: montserrat;
 }
 .inserir{
@@ -258,4 +258,48 @@ header{
     color: white;
     border: 1px gray solid;
     border-radius: 5px;
+}
+
+/* Pag Trabalhos */
+.trabalhos{
+    height: 87vh;
+}
+
+.tittle-trabalhos{
+    font-size: 3vh;
+    text-align: center;
+}
+.explicacao-pag-trabalhos{
+    font-size: 2.2vh;
+    text-align: center;
+    margin: 10px;
+    margin-bottom: 20px;
+}
+.section-trabalhos{
+    display: flex;
+    flex-direction: column;
+    margin: 0 20px 0 20px;
+}
+.mostrar-trabalhos p{
+    font-size: 2.1vh;
+    margin: 5px 25px 15px 25px;
+}
+.tittle-summary{
+    font-size: 2.5vh;
+}
+.section-imgvscode{
+    width: 100%; 
+    display: flex;
+    justify-content: center;
+}
+.img-vscode{
+    width: 80%;
+}
+.section-acess{
+    
+}
+.acessar-job, .acessar-github{
+    width: 7vh;
+    margin-left: 1.5vh;
+    margin-right: 1.5vh;
 }
