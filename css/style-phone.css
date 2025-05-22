@@ -8,6 +8,10 @@ header{
     margin-left: 10px;
     font-size: 2.5vh;
 }
+.controle-conteudo .row>*{
+    padding: 0;
+}
+
 
 .links{
     display: flex;
@@ -296,7 +300,7 @@ header{
     width: 80%;
 }
 .section-acess{
-    
+
 }
 .acessar-job, .acessar-github{
     width: 7vh;
