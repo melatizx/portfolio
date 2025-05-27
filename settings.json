@@ -1,0 +1,9 @@
+{
+    "explorer.confirmDelete": false,
+    "liveServer.settings.donotShowInfoMsg": true,
+    
+    "workbench.editorAssociations": {
+        "*.svg": "default"
+        
+    }
+}
