@@ -1,3 +1,4 @@
+/* Conteudo Pages */
 .inicio{
     display: flex;
     justify-content: center;
@@ -15,6 +16,12 @@
 }
 .subtitulo2{
     font-size: 2.1vh;
+}
+h2{
+    font-size: 4vh;
+}
+h3{
+    font-size: 3.3vh;
 }
 .icons-habilidades{
     display: flex;
@@ -50,10 +57,56 @@
     text-align: left;
     font-size: 2.8vh;
 }
+.section-best-project{
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    text-align: center;
+}
+.explicacao-best-project{
+    font-size: 2.7vh;
+}
+
+/* Modal */
+.modal-css-mlt{
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    width: 96%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 10px;
+}
+.assuntoInserido{
+    width: 100%;
+    border: 2px solid gray;
+    border-radius: 5px 5px 0px 0px;
+    padding-left: 5px;
+    height: 4.5vh;
+}
+.corpoInserido{
+    width: 100%;
+    border: 2px solid gray;
+    border-radius: 0px 0px 5px 5px;
+    padding-left: 5px;
+    height: 55vh;
+    font-size: 2vh;
+}
+.btn-fechar{
+    border: 2px ;
+}
+/* Medias Querys */
 @media screen and (min-width: 1430px){
     .explicacao-formacao{
         padding-left: 220px;
         padding-right: 220px;
+    }
+    .explicacao-best-project{
+        padding-left: 220px;
+        padding-right: 220px;
+        text-align: left;
     }
 }
 @media screen and (min-width: 990px) and (max-width: 1429px){
@@ -61,10 +114,20 @@
         padding-left: 150px;
         padding-right: 150px;
     }
+    .explicacao-best-project{
+        padding-left: 150px;
+        padding-right: 150px;
+        text-align: left;
+    }
 }
 @media screen and (min-width: 730px) and (max-width: 989px){
     .explicacao-formacao{
         padding-left: 80px;
         padding-right: 80px;
+    }
+    .explicacao-best-project{
+        padding-left: 80px;
+        padding-right: 80px;
+        text-align: left;
     }
 }
