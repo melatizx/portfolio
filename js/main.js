@@ -8,3 +8,9 @@ function enviarEmail(){
     const url = `https://mail.google.com/mail/?view=cm&fs=1&to=${destinatario}&su=${assunto}&body=${corpo}`
     window.open(url, '_blank')
 }
+
+//Trocar imagem
+function trocar(imagemElement, novaImagem){
+    imagemElement.classList.toggle("imgEfeito");
+    imagemElement.src = novaImagem 
+}

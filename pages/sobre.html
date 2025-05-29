@@ -16,7 +16,7 @@
         <header >
             <nav class="navbar navbar-expand-md navbar-dark fixed-top bg-dark">
                 <div class="container-fluid">
-                    <a class="navbar-brand" href="#">MLT</a> 
+                    <a class="navbar-brand" href="../index.html">MLT</a> 
 
                     <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="true" aria-label="Toggle navigation"> <span class="navbar-toggler-icon"></span> </button> 
                     <div class="navbar-collapse collapse " id="navbarCollapse" style="background-color: blakc;">
@@ -31,7 +31,7 @@
                 </div>
             </nav>
         </header>
-        <main style="margin-top: 70px; padding: 15px;">
+        <main style="margin-top: 70px; padding: 15px;" id="inicio">
             <section class="sobremim-section">
                 <p>&nbsp&nbsp Olá! Me chamo Leonardo, resido em Sorocaba - SP, e atualmente estou atuando de jovem aprendiz em uma empresa de teleatendimento bancário, no setor de SAC.</p>
                 <p>&nbsp&nbsp Em busca de minha primeira experiência na área de atuação de ADS, estou encaminhando para finalização do curso, que se encerra ao final deste ano de 2025, concluindo o quarto semestre. Porém, mesmo sem expêriencia direta, realizo serviços de programação para minha atual empresa, influenciando na agilidade da resolução de problemas.</p>
@@ -42,11 +42,11 @@
                 <h2>Redes Sociais:</h2>
                 <section class="icons-redes">
                     <section class="section-icon-and-legend">
-                        <a href="https://github.com/melatizx"><img src="../img/redes/github.svg" alt="Github" class="icons-geral" id="github"></a>
+                        <a href="https://github.com/melatizx"><img src="../img/redes/github.svg" alt="Github" class="icons-geral" id="github" onmouseenter="trocar(this, '../img/redes/icons-hover/github-hover.svg')" onmouseleave="trocar(this, '../img/redes/github.svg')"></a>
                         <label for="github">GitHub</label>
                     </section>
                     <section class="section-icon-and-legend">
-                        <a href="https://www.instagram.com/melatizx/"><img src="../img/redes/linkedin.svg" alt="linkedIn" class="icons-geral" id="linkedin"></a>
+                        <a href="https://www.instagram.com/melatizx/"><img src="../img/redes/linkedin.svg" alt="linkedIn" class="icons-geral" id="linkedin" onmouseenter="trocar(this, '../img/redes/icons-hover/linkedin-hover.svg')" onmouseleave="trocar(this, '../img/redes/linkedin.svg')"></a>
                         <label for="linkedin">linkedIn</label>
                     </section>
                     <section class="section-icon-and-legend">
@@ -55,8 +55,9 @@
                     </section>
                 </section>
             </section>
+            <hr>
             <footer class="container">
-                <p class="float-end"><a href="#"></a></p>
+                <p class="float-end"><a href="#inicio">Voltar ao inicio</a></p>
                 <p>© 2025 Leonardo "Melatizx" </p>
             </footer>
         </main>
@@ -67,7 +68,7 @@
     <div class="modal-dialog">
       <div class="modal-content">
         <div class="modal-header">
-          <h1 class="modal-title fs-5" id="modalEnviarEmailLabel" style="font-size: 25px;">Escreva o email</h1>
+          <h1 class="modal-title fs-5" id="modalEnviarEmailLabel" style="font-size: 25px;"><b>Escreva o email</b></h1>
           <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
         </div>
         <div class="modal-body">  
@@ -75,13 +76,13 @@
             <textarea placeholder="Digite a sua mensagem" class="corpoInserido inserir" id="corpoInserido" name="corpoInserido" cols="30" rows="10" autocomplete="off"></textarea>   
         </div>
         <div class="modal-footer">
-          <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Fechar</button>
-          <button type="button" class="btn btn-primary" onclick="enviarEmail()">Enviar</button>
+          <button type="button" class="btn btn-secondary btn-fechar" data-bs-dismiss="modal"><b>Fechar</b></button>
+          <button type="button" class="btn btn-primary btn-enviar" onclick="enviarEmail()"><b>Enviar</b></button>
         </div>
       </div>
     </div>
-  </div>        
-        <script src="js/enviar_email.js"></script>
+  </div>       
+        <script src="../js/main.js"></script>
         <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.6/dist/js/bootstrap.bundle.min.js" integrity="sha384-j1CDi7MgGQ12Z7Qab0qlWQ/Qqz24Gc6BM0thvEMVjHnfYGF0rmFCozFSxQBxwHKO" crossorigin="anonymous"></script>
     </body>
 </html>

@@ -35,6 +35,8 @@ h3{
     height: 80px;
     margin: 20px 20px 10px 20px;
     color: #212529;
+    transition: opacity 1s ease;
+    opacity: 1;
 }
 .section-icon-and-legend{
     display: flex;
@@ -81,6 +83,7 @@ h3{
     color: #212529;
 }
 
+
 /* Modal */
 .modal-css-mlt{
     top: 0;
@@ -126,37 +129,54 @@ h3{
     width: 12vh;
 }
 
+/* Hovers */
+.nav-link:hover{
+    color: white !important;
+}
+.btn-fechar:hover{
+    background-color: rgb(218, 218, 218);
+    color: #212529;
+}
+.btn-enviar:hover{
+    background-color: #212529d5;
+    border-color: gray;
+}
+
 /* Medias Querys */
 @media screen and (min-width: 1430px){
-    .explicacao-formacao{
+    .explicacao-formacao, .sobremim-section, .explicacao-best-project{
         padding-left: 220px;
         padding-right: 220px;
     }
     .explicacao-best-project{
-        padding-left: 220px;
-        padding-right: 220px;
         text-align: left;
     }
 }
 @media screen and (min-width: 990px) and (max-width: 1429px){
-    .explicacao-formacao{
+    .explicacao-formacao, .sobremim-section, .explicacao-best-project{
         padding-left: 150px;
         padding-right: 150px;
     }
     .explicacao-best-project{
-        padding-left: 150px;
-        padding-right: 150px;
         text-align: left;
     }
 }
 @media screen and (min-width: 730px) and (max-width: 989px){
-    .explicacao-formacao{
+    .explicacao-formacao, .sobremim-section,.explicacao-best-project{
         padding-left: 80px;
         padding-right: 80px;
     }
     .explicacao-best-project{
-        padding-left: 80px;
-        padding-right: 80px;
         text-align: left;
     }
+}
+
+
+.imgEfeito{
+    transition: opacity 2s ease;
+    opacity: 1;
+    width: 100px;
+    height: 100px;
+    margin: 20px 20px 10px 20px;
+    position: fixed;
 }
