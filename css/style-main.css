@@ -126,6 +126,15 @@ h3{
     font-size: 2.5vh;
     width: 12vh;
 }
+.btn-enviar:active{
+    color: #212529d5;
+}
+
+.imgEfeito{
+    transition: opacity 2s ease;
+    opacity: 1;
+    margin: 20px 20px 10px 20px;
+}
 
 /* Hovers */
 .nav-link:hover{
@@ -170,8 +179,3 @@ h3{
 }
 
 
-.imgEfeito{
-    transition: opacity 2s ease;
-    opacity: 1;
-    margin: 20px 20px 10px 20px;
-}
