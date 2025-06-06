@@ -80,7 +80,65 @@ h3{
     justify-content: center;
     color: #212529;
 }
+.section-trabalhos{
+    margin-top: 30px;
+}
+.trabalhos-explicacao{
+    display: flex;
+    flex-direction: column;
+    padding-right: 2vh;
+    padding-left: 2vh;
+    font-size: 2.4vh;
+}
+.trabalhos-code{
+    padding-left: 2vh;
+    padding-right: 2vh;
+    margin-bottom: 25px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+.trabalhos-code img{
+    width: 100%;
+    border: 1px solid gray;
+    border-radius: 10px;
+}
+.trabalhos-acessos{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 40px;
+}
+.trabalhos-acessos img{
+    width: 6vh;
+    margin-right: 40px;
+    margin-left: 40;
+}
 
+#emailForm{
+    display: flex;
+    flex-direction: column;
+    border: 2px solid gray;
+    padding: 20px;
+}
+#name, #assunto, #mensagem{
+    border: none;
+    margin: 0;
+    color: #212529;
+}
+#name, #assunto, #mensagem:focus{
+    outline: none;
+}
+#mensagem{
+    resize: none;
+    height: 55.1vh;
+}
+.btns-email{
+    display: flex;
+    justify-content: flex-end;
+}
 
 /* Modal */
 .modal-css-mlt{
@@ -151,30 +209,68 @@ h3{
 
 /* Medias Querys */
 @media screen and (min-width: 1430px){
-    .explicacao-formacao, .sobremim-section, .explicacao-best-project{
+    .explicacao-formacao, .sobremim-section, .explicacao-best-project, .trabalhos{
         padding-left: 220px;
         padding-right: 220px;
     }
     .explicacao-best-project{
         text-align: left;
     }
+    .trabalhos-code img{
+        width: 60%;
+    }
+    .trabalhos-explicacao{
+        padding-left: 60px;
+        padding-right: 60px;
+    }
+    .trabalhos-acessos img{
+        width: 9vh;
+        margin-left: 70px;
+        margin-right: 70px;
+    }
+    #emailForm{
+        margin-left: 220px;
+        margin-right: 220px;
+    }
 }
 @media screen and (min-width: 990px) and (max-width: 1429px){
-    .explicacao-formacao, .sobremim-section, .explicacao-best-project{
+    .explicacao-formacao, .sobremim-section, .explicacao-best-project, .trabalhos, #emailForm{
         padding-left: 150px;
         padding-right: 150px;
     }
     .explicacao-best-project{
         text-align: left;
     }
+    .trabalhos-code img{
+        width: 75%;
+    }
+    .trabalhos-explicacao{
+        padding-left: 60px;
+        padding-right: 60px;
+    }
+    #emailForm{
+        margin-left: 150px;
+        margin-right: 150px;
+    }
 }
 @media screen and (min-width: 730px) and (max-width: 989px){
-    .explicacao-formacao, .sobremim-section,.explicacao-best-project{
+    .explicacao-formacao, .sobremim-section,.explicacao-best-project, .trabalhos, #emailForm{
         padding-left: 80px;
         padding-right: 80px;
     }
     .explicacao-best-project{
         text-align: left;
+    }
+    .trabalhos-code img{
+        width: 90%;
+    }
+    .trabalhos-explicacao{
+        padding-left: 60px;
+        padding-right: 60px;
+    }
+    #emailForm{
+        margin-left: 80px;
+        margin-right: 80px;
     }
 }
 

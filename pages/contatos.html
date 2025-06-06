@@ -32,17 +32,23 @@
         </header>
         <main style="margin-top: 70px; padding: 15px;" id="inicio">
             <h1 style="text-align: center;">Entre em contato comigo:</h1>
+            <hr>
             <section class="form">
                 <fieldset class="form-field">
                     <form id="emailForm">
-                        <label for="name">Nome:</label>
-                        <input type="text" id="name" name="name" required placeholder="Insira seu nome">
-                        <br>
-                        <label for="email"></label>
+                        <input type="text" id="name" name="name" required placeholder="Seu nome" autocomplete="off">
+                        <hr>
+                        <input type="text" id="assunto" name="name" required placeholder="Assunto" autocomplete="off">
+                        <hr>
+                        <textarea name="mensagem" id="mensagem" autocomplete="off"></textarea>
                     </form>
+                    <section class="btns-email">
+                        <input type="button" id="btn-enviar" value="Enviar">
+                    </section>
                 </fieldset>
             </section>
             <hr>
+            <!-- RODAPE -->
             <footer class="container">
                 <p class="float-end"><a href="#inicio">Voltar ao inicio</a></p>
                 <p>© 2025 Leonardo "Melatizx" </p>
