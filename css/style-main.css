@@ -139,70 +139,19 @@ h3{
     display: flex;
     justify-content: flex-end;
 }
-
-/* Modal */
-.modal-css-mlt{
-    top: 0;
-    bottom: 0;
-    left: 0;
-    right: 0;
-    width: 96%;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    margin: 10px;
-}
-.assuntoInserido{
-    width: 100%;
-    border: 2px solid gray;
-    border-radius: 5px 5px 0px 0px;
-    padding-left: 5px;
-    height: 4.5vh;
-}
-.corpoInserido{
-    width: 100%;
-    border: 2px solid gray;
-    border-radius: 0px 0px 5px 5px;
-    padding-left: 5px;
-    height: 55vh;
-    font-size: 2.2vh;
-}
-.inserir:focus{
-    border-color: #212529;
-}
-.btn-fechar{
-    border: 2px solid gray;
-    background-color: white;
-    color: #212529;
-    font-size: 2.5vh;
-    width: 12vh;
-}
-.btn-enviar{
+#btn-enviar{
+    border-radius: 5px;
     border: 2px solid gray;
     background-color: #212529;
     color: white;
-    font-size: 2.5vh;
-    width: 12vh;
+    font-size: 2vh;
+    width: 10vh;
 }
-.btn-enviar:active{
-    color: #212529d5;
-}
-
-.imgEfeito{
-    transition: opacity 2s ease;
-    opacity: 1;
-    margin: 20px 20px 10px 20px;
-}
-
 /* Hovers */
 .nav-link:hover{
     color: white !important;
 }
-.btn-fechar:hover{
-    background-color: rgb(218, 218, 218);
-    color: #212529;
-}
-.btn-enviar:hover{
+#btn-enviar:hover{
     background-color: #212529d5;
     border-color: gray;
 }
@@ -232,6 +181,10 @@ h3{
         margin-left: 220px;
         margin-right: 220px;
     }
+    #btn-enviar{
+        margin-left: 220px;
+        margin-right: 220px;
+    }
 }
 @media screen and (min-width: 990px) and (max-width: 1429px){
     .explicacao-formacao, .sobremim-section, .explicacao-best-project, .trabalhos, #emailForm{
@@ -249,6 +202,11 @@ h3{
         padding-right: 60px;
     }
     #emailForm{
+        margin-left: 150px;
+        margin-right: 150px;
+        padding: 20px;
+    }
+    #btn-enviar{
         margin-left: 150px;
         margin-right: 150px;
     }
@@ -269,6 +227,11 @@ h3{
         padding-right: 60px;
     }
     #emailForm{
+        margin-left: 80px;
+        margin-right: 80px;
+        padding: 15px;
+    }
+    #btn-enviar{
         margin-left: 80px;
         margin-right: 80px;
     }
