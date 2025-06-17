@@ -117,18 +117,18 @@ h3{
     margin-left: 40;
 }
 
-#emailForm{
+#contact-form{
     display: flex;
     flex-direction: column;
     border: 2px solid gray;
     padding: 20px;
 }
-#name, #assunto, #mensagem{
+#name, #email, #mensagem{
     border: none;
     margin: 0;
     color: #212529;
 }
-#name, #assunto, #mensagem:focus{
+#name, #email, #mensagem:focus{
     outline: none;
 }
 #mensagem{
@@ -177,7 +177,7 @@ h3{
         margin-left: 70px;
         margin-right: 70px;
     }
-    #emailForm{
+    #contact-form{
         margin-left: 220px;
         margin-right: 220px;
     }
@@ -201,7 +201,7 @@ h3{
         padding-left: 60px;
         padding-right: 60px;
     }
-    #emailForm{
+    #contact-form{
         margin-left: 150px;
         margin-right: 150px;
         padding: 20px;
@@ -226,7 +226,7 @@ h3{
         padding-left: 60px;
         padding-right: 60px;
     }
-    #emailForm{
+    #contact-form{
         margin-left: 80px;
         margin-right: 80px;
         padding: 15px;

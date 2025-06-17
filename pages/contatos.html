@@ -35,16 +35,16 @@
             <hr>
             <section class="form">
                 <fieldset class="form-field">
-                    <form id="emailForm">
-                        <input type="text" id="name" name="name" required placeholder="Seu nome" autocomplete="off">
-                        <hr>
-                        <input type="text" id="assunto" name="name" required placeholder="Assunto" autocomplete="off">
-                        <hr>
-                        <textarea name="mensagem" id="mensagem" autocomplete="off"></textarea>
-                    </form>
+                    <form id="contact-form">
+                    <input type="text" id="name" name="name" required placeholder="Seu Nome" autocomplete="off">
+                    <hr>
+                    <input type="email" id="email" name="email" required placeholder="Seu E-Mail" autocomplete="off">
+                    <hr>
+                    <textarea name="mensagem" id="mensagem" required autocomplete="off"></textarea>
                     <section class="btns-email">
-                        <input type="button" id="btn-enviar" value="Enviar">
+                        <button type="submit" id="btn-enviar">Enviar</button>
                     </section>
+                    </form>
                 </fieldset>
             </section>
             <hr>
@@ -56,5 +56,20 @@
         </main>
         <script src="../js/main.js"></script>
         <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.6/dist/js/bootstrap.bundle.min.js" integrity="sha384-j1CDi7MgGQ12Z7Qab0qlWQ/Qqz24Gc6BM0thvEMVjHnfYGF0rmFCozFSxQBxwHKO" crossorigin="anonymous"></script>
+        <script src="https://cdn.emailjs.com/dist/email.min.js"></script>
+        <script>
+            emailjs.init("dyjrDHda6rLlc81fS");
+
+            document.getElementById('contact-form').addEventListener('submit', function(event) {
+                event.preventDefault();
+
+                emailjs.sendForm('service_mrbmjwk', 'template_1j4f95o', this)
+                .then(function() {
+                    alert('E-mail enviado com sucesso!');
+                }, function(error) {
+                    alert('Erro ao enviar e-mail: ' + JSON.stringify(error));
+                });
+            });
+        </script>
     </body>
 </html>
