@@ -32,4 +32,8 @@ public class Project {
         this.name = name;
     }
 
+    public Project(String name, String description) {
+        this.name = name;
+        this.description = description;
+    }
 }

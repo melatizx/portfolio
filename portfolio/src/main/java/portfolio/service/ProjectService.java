@@ -42,4 +42,17 @@ public class ProjectService {
 
         return null;
     }
+
+    public Project createProject(Project project) {
+        Long newId = projects.stream().mapToLong(Project::getId).max().orElse(0L) + 1;
+
+        Project newProject = new Project(
+                newId,
+                project.getName(),
+                project.getDescription());
+
+        projects.add(newProject);
+
+        return newProject;
+    }
 }

@@ -3,6 +3,7 @@ package portfolio.controller;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RestController;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.PathVariable;
 import portfolio.model.Project;
 import portfolio.service.ProjectService;
 import java.util.List;
@@ -17,8 +18,13 @@ public class PortfolioController {
         this.projectService = projectService;
     }
 
-    @GetMapping("/")
+    @GetMapping
     public List<Project> getProject() {
         return projectService.getProjects();
+    }
+
+    @GetMapping("/{id}")
+    public Project getProjectById(@PathVariable Long id) {
+        return projectService.getProjectById(id);
     }
 }
