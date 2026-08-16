@@ -50,8 +50,7 @@ The application is continuously evolving as new technologies and features are im
 
 ---
 
-
-```
 <p align="center">
   © 2026 Leonardo Melati
 </p>
+```
