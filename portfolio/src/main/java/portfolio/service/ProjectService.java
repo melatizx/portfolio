@@ -55,4 +55,29 @@ public class ProjectService {
 
         return newProject;
     }
+
+    public Project updateProject(Long id, Project projectData) {
+        Project project = getProjectById(id);
+
+        if (project == null) {
+            return null;
+        }
+
+        project.setName(projectData.getName());
+        project.setDescription(projectData.getDescription());
+
+        return project;
+    }
+
+    public boolean deleteProject(Long id) {
+        Project project = getProjectById(id);
+
+        if (project == null) {
+            return false;
+        }
+
+        projects.remove(project);
+
+        return true;
+    }
 }
