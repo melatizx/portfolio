@@ -26,7 +26,6 @@ Personal portfolio built with **Java and Spring Boot**, showcasing my profession
 - Git
 - GitHub
 - Postman
-- IntelliJ IDEA
 
 ---
 
