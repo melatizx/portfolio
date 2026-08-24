@@ -20,7 +20,7 @@ Personal portfolio built with **Java and Spring Boot**, showcasing my profession
 - JavaScript
 
 **Database**
-- MySQL
+- PostgreSQL
 
 **Tools**
 - Git
