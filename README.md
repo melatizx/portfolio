@@ -12,7 +12,6 @@ Personal portfolio built with **Java and Spring Boot**, showcasing my profession
 - Java
 - Spring Boot
 - Spring Data JPA
-- Maven
 
 **Frontend**
 - HTML5
@@ -25,7 +24,7 @@ Personal portfolio built with **Java and Spring Boot**, showcasing my profession
 **Tools**
 - Git
 - GitHub
-- Postman
+- Rainwail
 
 ---
 
