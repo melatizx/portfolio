@@ -6,7 +6,7 @@ import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
 
 @Entity
-public class Project {
+public class Skill {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -14,20 +14,14 @@ public class Project {
 
     private String name;
 
-    private String description;
+    private String category;
 
-    public Project() {
+    public Skill() {
     }
 
-    public Project(Long id, String name, String description) {
-        this.id = id;
+    public Skill(String name, String category) {
         this.name = name;
-        this.description = description;
-    }
-
-    public Project(String name, String description) {
-        this.name = name;
-        this.description = description;
+        this.category = category;
     }
 
     public Long getId() {
@@ -38,15 +32,15 @@ public class Project {
         return name;
     }
 
-    public String getDescription() {
-        return description;
+    public String getCategory() {
+        return category;
     }
 
     public void setName(String name) {
         this.name = name;
     }
 
-    public void setDescription(String description) {
-        this.description = description;
+    public void setCategory(String category) {
+        this.category = category;
     }
 }

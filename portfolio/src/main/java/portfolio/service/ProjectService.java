@@ -1,83 +1,91 @@
 package portfolio.service;
 
-import java.util.List;
-import java.util.ArrayList;
-
 import org.springframework.stereotype.Service;
+import portfolio.dto.ProjectRequest;
+import portfolio.dto.ProjectResponse;
 import portfolio.model.Project;
+import portfolio.repository.ProjectRepository;
+
+import java.util.List;
 
 @Service
 public class ProjectService {
 
-    private final List<Project> projects = new ArrayList<>();
+    private final ProjectRepository projectRepository;
 
-    public ProjectService() {
-        projects.add(
-                new Project(
-                        1L,
-                        "Portfolio",
-                        "Portfolio profissional desenvolvido com springboot"));
-        projects.add(
-                new Project(
-                        2L,
-                        "Sistema de inventário",
-                        "Sistema desenvolvido para gerenciamento de inventário"));
-        projects.add(
-                new Project(
-                        3L,
-                        "API de logs",
-                        "API para análise de logs de infraestrutura"));
+    public ProjectService(ProjectRepository projectRepository) {
+        this.projectRepository = projectRepository;
     }
 
-    public List<Project> getProjects() {
-        return projects;
+    public List<ProjectResponse> getProjects() {
+
+        return projectRepository.findAll()
+                .stream()
+                .map(this::toResponse)
+                .toList();
     }
 
-    public Project getProjectById(Long id) {
-        for (Project project : projects) {
-            if (project.getId().equals(id)) {
-                return project;
-            }
-        }
+    public ProjectResponse getProjectById(Long id) {
 
-        return null;
-    }
-
-    public Project createProject(Project project) {
-        Long newId = projects.stream().mapToLong(Project::getId).max().orElse(0L) + 1;
-
-        Project newProject = new Project(
-                newId,
-                project.getName(),
-                project.getDescription());
-
-        projects.add(newProject);
-
-        return newProject;
-    }
-
-    public Project updateProject(Long id, Project projectData) {
-        Project project = getProjectById(id);
+        Project project = projectRepository.findById(id).orElse(null);
 
         if (project == null) {
             return null;
         }
 
-        project.setName(projectData.getName());
-        project.setDescription(projectData.getDescription());
+        return toResponse(project);
+    }
 
-        return project;
+    public ProjectResponse createProject(ProjectRequest request) {
+
+        Project project = toEntity(request);
+
+        Project savedProject = projectRepository.save(project);
+
+        return toResponse(savedProject);
+    }
+
+    public ProjectResponse updateProject(
+            Long id,
+            ProjectRequest request) {
+
+        Project project = projectRepository.findById(id).orElse(null);
+
+        if (project == null) {
+            return null;
+        }
+
+        project.setName(request.getName());
+        project.setDescription(request.getDescription());
+
+        Project updatedProject = projectRepository.save(project);
+
+        return toResponse(updatedProject);
     }
 
     public boolean deleteProject(Long id) {
-        Project project = getProjectById(id);
 
-        if (project == null) {
+        if (!projectRepository.existsById(id)) {
             return false;
         }
 
-        projects.remove(project);
+        projectRepository.deleteById(id);
 
         return true;
+    }
+
+    private Project toEntity(ProjectRequest request) {
+
+        return new Project(
+                request.getName(),
+                request.getDescription());
+    }
+
+    private ProjectResponse toResponse(Project project) {
+
+        return new ProjectResponse(
+                project.getId(),
+                project.getName(),
+                project.getDescription());
     }
 }

@@ -8,8 +8,13 @@ import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.PutMapping;
 import org.springframework.web.bind.annotation.DeleteMapping;
-import portfolio.model.Project;
+import org.springframework.http.HttpStatus;
 import portfolio.service.ProjectService;
+import jakarta.validation.Valid;
+import portfolio.dto.ProjectRequest;
+import portfolio.dto.ProjectResponse;
+
+import org.springframework.http.ResponseEntity;
 import java.util.List;
 
 @RestController
@@ -23,35 +28,57 @@ public class PortfolioController {
     }
 
     @GetMapping
-    public List<Project> getProject() {
+    public List<ProjectResponse> getProjects() {
         return projectService.getProjects();
     }
 
     @GetMapping("/{id}")
-    public Project getProjectById(@PathVariable Long id) {
-        return projectService.getProjectById(id);
+    public ResponseEntity<ProjectResponse> getProjectById(
+            @PathVariable Long id) {
+
+        ProjectResponse project = projectService.getProjectById(id);
+
+        if (project == null) {
+            return ResponseEntity.notFound().build();
+        }
+
+        return ResponseEntity.ok(project);
     }
 
     @PostMapping
-    public Project createProject(@RequestBody Project project) {
-        return projectService.createProject(project);
+    public ResponseEntity<ProjectResponse> createProject(
+            @Valid @RequestBody ProjectRequest request) {
+
+        ProjectResponse createdProject = projectService.createProject(request);
+
+        return ResponseEntity
+                .status(HttpStatus.CREATED)
+                .body(createdProject);
     }
 
     @PutMapping("/{id}")
-    public Project updateProject(
+    public ResponseEntity<ProjectResponse> updateProject(
             @PathVariable Long id,
-            @RequestBody Project project) {
-        return projectService.updateProject(id, project);
+            @Valid @RequestBody ProjectRequest request) {
+
+        ProjectResponse updatedProject = projectService.updateProject(id, request);
+
+        if (updatedProject == null) {
+            return ResponseEntity.notFound().build();
+        }
+
+        return ResponseEntity.ok(updatedProject);
     }
 
     @DeleteMapping("/{id}")
-    public String deleteProject(@PathVariable Long id) {
+    public ResponseEntity<Void> deleteProject(@PathVariable Long id) {
+
         boolean deleted = projectService.deleteProject(id);
 
-        if (deleted) {
-            return "Projeto excluido com sucesso";
+        if (!deleted) {
+            return ResponseEntity.notFound().build();
         }
 
-        return "Projeto não encontrado";
+        return ResponseEntity.noContent().build();
     }
 }
