@@ -88,8 +88,8 @@ The portfolio currently includes:
   </a>
   
   <a href="https://www.linkedin.com/in/leonardomelatiambrosio/">
-    <img src="https://img.shields.io/badge/-14527A?style=for-the-badge&logo=linkedin&logoColor=white" alt="LinkedIn">
-  </a>
+  <img src="https://img.shields.io/badge/-0B3A5B?style=for-the-badge&logo=linkedin&logoColor=white" alt="LinkedIn">
+</a>
   
   <a href="https://github.com/melatizx">
     <img src="https://img.shields.io/badge/-0B3A5B?style=for-the-badge&logo=github&logoColor=white" alt="GitHub">
