@@ -1,42 +1,59 @@
-# Portfolio — Leonardo Melati
+# 🚀 Portfolio — Leonardo Melati
 
 ### Back-End Developer & Infrastructure Analyst
 
-Personal portfolio built with **Java and Spring Boot**, showcasing my professional experience, technical skills, education and projects.
+Personal portfolio developed to showcase my professional background, technical skills, education, projects and experience in **software development and IT infrastructure**.
+
+The project combines a **Java/Spring Boot backend** with a responsive frontend and **PostgreSQL** database, serving as both a professional portfolio and a practical demonstration of my development skills.
+
+---
+
+## About Me
+
+I'm **Leonardo Melati**, a Back-End Developer and Infrastructure Analyst with an interest in building reliable software solutions and working with enterprise IT infrastructure.
+
+My experience combines two areas that complement each other:
+
+- **Software Development**
+- **Servers & Data Center Infrastructure**
+
+This portfolio was created to bring these areas together and demonstrate my knowledge through a real-world application.
 
 ---
 
 ## Tech Stack
 
-**Backend**
-- Java
-- Spring Boot
-- Spring Data JPA
+### Backend
 
-**Frontend**
+- Java 21
+- Spring Boot 4.1.0
+- Spring Data JPA
+- Spring Validation
+- Spring MVC
+
+### Frontend
+
 - HTML5
 - CSS3
 - JavaScript
 
-**Database**
+### Database
+
 - PostgreSQL
 
-**Tools**
+### Development & Deployment
+
 - Git
 - GitHub
-- Rainwail
-
----
-
-## About
-
-This project was developed to present my professional background and demonstrate my skills in **backend development, software engineering and enterprise infrastructure**.
-
-The application is continuously evolving as new technologies and features are implemented.
+- Maven
+- VS Code
+- Railway
 
 ---
 
 ## Features
+
+The portfolio currently includes:
 
 - Professional profile
 - Technical skills
@@ -45,9 +62,39 @@ The application is continuously evolving as new technologies and features are im
 - Projects
 - Contact information
 - Responsive interface
+- PostgreSQL database integration
+- Environment-based configuration for sensitive data
+
+The application is continuously evolving as new features and technologies are implemented.
 
 ---
 
-<p align="center">
-  © 2026 Leonardo Melati
-</p>
+## Architecture
+
+The project follows a backend-oriented architecture using Spring Boot and PostgreSQL.
+
+```text
+                    ┌──────────────────┐
+                    │     Frontend     │
+                    │                  │
+                    │ HTML / CSS / JS  │
+                    └────────┬─────────┘
+                             │
+                             │ HTTP
+                             ▼
+                    ┌──────────────────┐
+                    │     Backend      │
+                    │                  │
+                    │ Java             │
+                    │ Spring Boot      │
+                    │ Spring MVC       │
+                    │ Spring Data JPA  │
+                    └────────┬─────────┘
+                             │
+                             │ JDBC
+                             ▼
+                    ┌──────────────────┐
+                    │    PostgreSQL    │
+                    │                  │
+                    │    Database      │
+                    └──────────────────┘
