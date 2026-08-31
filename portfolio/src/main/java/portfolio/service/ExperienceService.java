@@ -3,6 +3,7 @@ package portfolio.service;
 import org.springframework.stereotype.Service;
 import portfolio.dto.ExperienceRequest;
 import portfolio.dto.ExperienceResponse;
+import portfolio.exception.ResourceNotFoundException;
 import portfolio.model.Experience;
 import portfolio.repository.ExperienceRepository;
 
@@ -29,11 +30,7 @@ public class ExperienceService {
     public ExperienceResponse getExperienceById(Long id) {
 
         Experience experience = experienceRepository.findById(id)
-                .orElse(null);
-
-        if (experience == null) {
-            return null;
-        }
+                .orElseThrow(() -> new ResourceNotFoundException("Formação não encontrada: " + id));
 
         return toResponse(experience);
     }

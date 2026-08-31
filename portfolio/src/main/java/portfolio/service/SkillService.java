@@ -3,8 +3,10 @@ package portfolio.service;
 import org.springframework.stereotype.Service;
 import portfolio.dto.SkillRequest;
 import portfolio.dto.SkillResponse;
+import portfolio.exception.ResourceNotFoundException;
 import portfolio.model.Skill;
 import portfolio.repository.SkillRepository;
+import portfolio.exception.ResourceNotFoundException;
 
 import java.util.List;
 
@@ -29,11 +31,7 @@ public class SkillService {
     public SkillResponse getSkillById(Long id) {
 
         Skill skill = skillRepository.findById(id)
-                .orElse(null);
-
-        if (skill == null) {
-            return null;
-        }
+                .orElseThrow(() -> new ResourceNotFoundException("Skill não encontrada: " + id));
 
         return toResponse(skill);
     }
@@ -55,11 +53,7 @@ public class SkillService {
             SkillRequest request) {
 
         Skill skill = skillRepository.findById(id)
-                .orElse(null);
-
-        if (skill == null) {
-            return null;
-        }
+                .orElseThrow(() -> new ResourceNotFoundException("Skill não encontrada: " + id));
 
         skill.setName(request.getName());
         skill.setCategory(request.getCategory());
@@ -69,15 +63,13 @@ public class SkillService {
         return toResponse(updatedSkill);
     }
 
-    public boolean deleteSkill(Long id) {
+    public void deleteSkill(Long id) {
 
         if (!skillRepository.existsById(id)) {
-            return false;
+            throw new ResourceNotFoundException("Skill não encontrada: " + id);
         }
 
         skillRepository.deleteById(id);
-
-        return true;
     }
 
     private SkillResponse toResponse(Skill skill) {

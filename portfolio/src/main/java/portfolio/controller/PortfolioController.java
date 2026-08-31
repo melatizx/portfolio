@@ -38,10 +38,6 @@ public class PortfolioController {
 
         ProjectResponse project = projectService.getProjectById(id);
 
-        if (project == null) {
-            return ResponseEntity.notFound().build();
-        }
-
         return ResponseEntity.ok(project);
     }
 

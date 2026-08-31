@@ -1,9 +1,9 @@
 package portfolio.model;
 
-import jakarta.persistence.Entity;
-import jakarta.persistence.GeneratedValue;
-import jakarta.persistence.GenerationType;
-import jakarta.persistence.Id;
+import jakarta.persistence.*;
+
+import java.util.ArrayList;
+import java.util.List;
 
 @Entity
 public class Project {
@@ -16,18 +16,27 @@ public class Project {
 
     private String description;
 
+    private String githubUrl;
+
+    private String liveUrl;
+
+    @ManyToMany
+    @JoinTable(name = "project_skills", joinColumns = @JoinColumn(name = "project_id"), inverseJoinColumns = @JoinColumn(name = "skill_id"))
+
+    private List<Skill> skills = new ArrayList<>();
+
     public Project() {
     }
 
-    public Project(Long id, String name, String description) {
-        this.id = id;
+    public Project(
+            String name,
+            String description,
+            String githubUrl,
+            String liveUrl) {
         this.name = name;
         this.description = description;
-    }
-
-    public Project(String name, String description) {
-        this.name = name;
-        this.description = description;
+        this.githubUrl = githubUrl;
+        this.liveUrl = liveUrl;
     }
 
     public Long getId() {
@@ -42,11 +51,35 @@ public class Project {
         return description;
     }
 
+    public String getGithubUrl() {
+        return githubUrl;
+    }
+
+    public String getLiveUrl() {
+        return liveUrl;
+    }
+
+    public List<Skill> getSkills() {
+        return skills;
+    }
+
     public void setName(String name) {
         this.name = name;
     }
 
     public void setDescription(String description) {
         this.description = description;
+    }
+
+    public void setGithubUrl(String githubUrl) {
+        this.githubUrl = githubUrl;
+    }
+
+    public void setLiveUrl(String liveUrl) {
+        this.liveUrl = liveUrl;
+    }
+
+    public void setSkills(List<Skill> skills) {
+        this.skills = skills;
     }
 }

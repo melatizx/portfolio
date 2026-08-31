@@ -69,11 +69,7 @@ public class SkillController {
     public ResponseEntity<Void> deleteSkill(
             @PathVariable Long id) {
 
-        boolean deleted = skillService.deleteSkill(id);
-
-        if (!deleted) {
-            return ResponseEntity.notFound().build();
-        }
+        skillService.deleteSkill(id);
 
         return ResponseEntity.noContent().build();
     }
