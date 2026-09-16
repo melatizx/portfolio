@@ -87,13 +87,6 @@ public class ProjectService {
         return true;
     }
 
-    private Project toEntity(ProjectRequest request) {
-
-        return new Project(
-                request.getName(),
-                request.getDescription());
-    }
-
     private ProjectResponse toResponse(Project project) {
 
         List<SkillSummaryResponse> skills = project.getSkills().stream()
