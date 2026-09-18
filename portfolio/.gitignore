@@ -34,4 +34,4 @@ build/
 
 ### Arquivos ###
 .env
-
+./.env
