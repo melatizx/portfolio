@@ -5,6 +5,7 @@ public class SkillSummaryResponse {
     private Long id;
     private String name;
     private String category;
+    private String note;
 
     public SkillSummaryResponse() {
     }
@@ -12,10 +13,12 @@ public class SkillSummaryResponse {
     public SkillSummaryResponse(
             Long id,
             String name,
-            String category) {
+            String category,
+            String note) {
         this.id = id;
         this.name = name;
         this.category = category;
+        this.note = note;
     }
 
     public Long getId() {
@@ -28,5 +31,9 @@ public class SkillSummaryResponse {
 
     public String getCategory() {
         return category;
+    }
+
+    public String getNote() {
+        return note;
     }
 }

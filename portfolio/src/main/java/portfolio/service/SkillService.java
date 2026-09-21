@@ -22,7 +22,7 @@ public class SkillService {
 
     public List<SkillResponse> getSkills() {
 
-        return skillRepository.findAll()
+        return skillRepository.findAllByOrderBySortOrderAscIdAsc()
                 .stream()
                 .map(this::toResponse)
                 .toList();
@@ -41,7 +41,9 @@ public class SkillService {
 
         Skill skill = new Skill(
                 request.getName(),
-                request.getCategory());
+                request.getCategory(),
+                request.getNote(),
+                request.getSortOrder() != null ? request.getSortOrder() : nextSortOrder());
 
         Skill savedSkill = skillRepository.save(skill);
 
@@ -57,10 +59,19 @@ public class SkillService {
 
         skill.setName(request.getName());
         skill.setCategory(request.getCategory());
+        skill.setNote(request.getNote());
+
+        if (request.getSortOrder() != null) {
+            skill.setSortOrder(request.getSortOrder());
+        }
 
         Skill updatedSkill = skillRepository.save(skill);
 
         return toResponse(updatedSkill);
+    }
+
+    private int nextSortOrder() {
+        return (int) skillRepository.count();
     }
 
     public void deleteSkill(Long id) {
@@ -77,6 +88,8 @@ public class SkillService {
         return new SkillResponse(
                 skill.getId(),
                 skill.getName(),
-                skill.getCategory());
+                skill.getCategory(),
+                skill.getNote(),
+                skill.getSortOrder());
     }
 }

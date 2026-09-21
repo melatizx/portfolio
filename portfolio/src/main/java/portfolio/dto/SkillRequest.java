@@ -10,6 +10,10 @@ public class SkillRequest {
     @NotBlank(message = "Categoria da skill é obrigatória")
     private String category;
 
+    private String note;
+
+    private Integer sortOrder;
+
     public SkillRequest() {
     }
 
@@ -21,11 +25,27 @@ public class SkillRequest {
         return category;
     }
 
+    public String getNote() {
+        return note;
+    }
+
+    public Integer getSortOrder() {
+        return sortOrder;
+    }
+
     public void setName(String name) {
         this.name = name;
     }
 
     public void setCategory(String category) {
         this.category = category;
+    }
+
+    public void setNote(String note) {
+        this.note = note;
+    }
+
+    public void setSortOrder(Integer sortOrder) {
+        this.sortOrder = sortOrder;
     }
 }

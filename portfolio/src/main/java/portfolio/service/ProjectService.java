@@ -90,7 +90,9 @@ public class ProjectService {
     private ProjectResponse toResponse(Project project) {
 
         List<SkillSummaryResponse> skills = project.getSkills().stream()
-                .map(skill -> new SkillSummaryResponse(skill.getId(), skill.getName(), skill.getCategory())).toList();
+                .map(skill -> new SkillSummaryResponse(skill.getId(), skill.getName(), skill.getCategory(),
+                        skill.getNote()))
+                .toList();
 
         return new ProjectResponse(project.getId(), project.getName(), project.getDescription(), project.getGithubUrl(),
                 project.getLiveUrl(), skills);
