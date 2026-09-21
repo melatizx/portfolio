@@ -70,6 +70,9 @@ public class ProjectService {
 
         project.setName(request.getName());
         project.setDescription(request.getDescription());
+        project.setGithubUrl(request.getGithubUrl());
+        project.setLiveUrl(request.getLiveUrl());
+        project.setSkills(findSkills(request.getSkillIds()));
 
         Project updatedProject = projectRepository.save(project);
 

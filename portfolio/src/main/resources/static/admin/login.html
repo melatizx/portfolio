@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Login · Admin</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@600;700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+<link rel="icon" href="../icons/melati-logo.png" type="image/png">
+<style>
+  :root {
+    --bg: #030507; --bg-elevated: #0B1220; --bg-panel: #0E1626;
+    --blue-600: #1447E6; --blue-400: #3B82F6; --blue-300: #7CA8FA;
+    --text: #EAF0FB; --text-muted: #8892A8; --text-faint: #4B5468;
+    --border: rgba(120, 160, 255, 0.16); --border-strong: rgba(120, 160, 255, 0.3);
+    --danger: #F04749;
+    --font-display: 'Space Grotesk', sans-serif; --font-body: 'Inter', sans-serif;
+  }
+  * { box-sizing: border-box; }
+  body {
+    margin: 0; min-height: 100vh; background: var(--bg); color: var(--text);
+    font-family: var(--font-body);
+    display: flex; align-items: center; justify-content: center; padding: 24px;
+  }
+  .login-card {
+    width: 100%; max-width: 380px;
+    background: var(--bg-elevated);
+    border: 1px solid var(--border);
+    border-radius: 12px;
+    padding: 36px 32px;
+  }
+  .login-card__brand { font-family: var(--font-display); font-weight: 600; font-size: 1.1rem; margin-bottom: 4px; }
+  .login-card__brand .dot { color: var(--blue-400); }
+  .login-card__title { font-family: var(--font-display); font-weight: 700; font-size: 1.5rem; margin: 18px 0 4px; }
+  .login-card__lead { color: var(--text-muted); font-size: 0.9rem; margin: 0 0 26px; }
+  .field { display: flex; flex-direction: column; gap: 6px; margin-bottom: 16px; }
+  .field label { font-size: 0.82rem; color: var(--text-muted); }
+  .field input {
+    background: var(--bg-panel); border: 1px solid var(--border); border-radius: 6px;
+    padding: 11px 12px; color: var(--text); font-size: 0.95rem;
+  }
+  .field input:focus { outline: none; border-color: var(--blue-400); }
+  .btn-submit {
+    width: 100%; margin-top: 6px;
+    background: var(--blue-600); border: none; color: #fff;
+    padding: 12px; border-radius: 6px; font-size: 0.95rem; cursor: pointer;
+    transition: background 0.2s ease;
+  }
+  .btn-submit:hover { background: var(--blue-400); }
+  .alert {
+    background: rgba(240, 71, 73, 0.12); border: 1px solid rgba(240, 71, 73, 0.35);
+    color: #ff9d9e; font-size: 0.85rem; padding: 10px 12px; border-radius: 6px; margin-bottom: 18px;
+  }
+  .alert.is-info { background: rgba(59, 130, 246, 0.1); border-color: var(--border-strong); color: var(--blue-300); }
+  .back-link { display: inline-block; margin-top: 22px; font-size: 0.82rem; color: var(--text-faint); text-decoration: none; }
+  .back-link:hover { color: var(--blue-300); }
+</style>
+</head>
+<body>
+
+  <div class="login-card">
+    <p class="login-card__brand"><img src="../icons/melati-logo.png" class="image-logo-melatidev"></p>
+    <h1 class="login-card__title">Acessar admin</h1>
+    <p class="login-card__lead">Entre com as credenciais definidas em <code>ADMIN_USERNAME</code> / <code>ADMIN_PASSWORD</code>.</p>
+
+    <div id="alertBox"></div>
+
+    <form method="POST" action="/login">
+      <div class="field">
+        <label for="username">Usuário</label>
+        <input type="text" id="username" name="username" autocomplete="username" required autofocus>
+      </div>
+      <div class="field">
+        <label for="password">Senha</label>
+        <input type="password" id="password" name="password" autocomplete="current-password" required>
+      </div>
+      <button type="submit" class="btn-submit">Entrar</button>
+    </form>
+
+    <a class="back-link" href="/index.html">&larr; Voltar ao site</a>
+  </div>
+
+  <script>
+    const params = new URLSearchParams(window.location.search);
+    const box = document.getElementById("alertBox");
+    if (params.has("error")) {
+      box.innerHTML = '<div class="alert">Usuário ou senha inválidos.</div>';
+    } else if (params.has("logout")) {
+      box.innerHTML = '<div class="alert is-info">Você saiu da sua conta.</div>';
+    }
+  </script>
+</body>
+</html>

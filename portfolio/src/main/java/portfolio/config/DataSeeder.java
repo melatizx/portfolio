@@ -37,17 +37,14 @@ public class DataSeeder implements CommandLineRunner {
         List<Skill> skills = new ArrayList<>();
         int order = 0;
 
-        // Languages
         for (String name : List.of("Java", "Python", "JavaScript", "C")) {
             skills.add(new Skill(name, "Languages", null, order++));
         }
 
-        // Databases
         for (String name : List.of("SQL", "PostgreSQL", "Oracle")) {
             skills.add(new Skill(name, "Databases", null, order++));
         }
 
-        // Server Infrastructure (label + note)
         String[][] serverInfra = {
                 { "Dell", "Servers; Storages; Networkings; Appliences; Lybrarys" },
                 { "HPE", "Servers; Storages; Networkings; Lybrarys" },
@@ -67,12 +64,10 @@ public class DataSeeder implements CommandLineRunner {
             skills.add(new Skill(item[0], "Server Infrastructure", item[1], order++));
         }
 
-        // Operating Systems
         for (String name : List.of("Linux", "Windows Server")) {
             skills.add(new Skill(name, "Operating Systems", null, order++));
         }
 
-        // Management (label + note)
         String[][] management = {
                 { "iDRAC", "Dell" },
                 { "XClarity", "Lenovo" },
@@ -83,22 +78,18 @@ public class DataSeeder implements CommandLineRunner {
             skills.add(new Skill(item[0], "Management", item[1], order++));
         }
 
-        // Tools
         for (String name : List.of("Docker", "Git", "GitHub", "HTML5", "CSS3", "JSON")) {
             skills.add(new Skill(name, "Tools", null, order++));
         }
 
-        // Frameworks
         for (String name : List.of("Spring Boot", "Django", "GetBootStrap")) {
             skills.add(new Skill(name, "Frameworks", null, order++));
         }
 
-        // AI & Cloud
         for (String name : List.of("Anthropic Claude", "Microsoft Azure", "Google Cloud")) {
             skills.add(new Skill(name, "AI & Cloud", null, order++));
         }
 
-        // Soft Skills
         for (String name : List.of("Problem Solving", "Analytical Thinking", "Technical Documentation", "Teamwork",
                 "Communication")) {
             skills.add(new Skill(name, "Soft Skills", null, order++));
