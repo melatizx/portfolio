@@ -55,12 +55,22 @@
   .alert.is-info { background: rgba(59, 130, 246, 0.1); border-color: var(--border-strong); color: var(--blue-300); }
   .back-link { display: inline-block; margin-top: 22px; font-size: 0.82rem; color: var(--text-faint); text-decoration: none; }
   .back-link:hover { color: var(--blue-300); }
+
+  .image-logo-melatidev {
+    width: 60%;
+  }
+  .img-page-logo-admin {
+    display: flex;
+    justify-content: center;
+  }
 </style>
 </head>
 <body>
 
   <div class="login-card">
-    <p class="login-card__brand"><img src="../icons/melati-logo.png" class="image-logo-melatidev"></p>
+    <div class="img-page-logo-admin">
+      <img src="../icons/melati-logo.png" class="image-logo-melatidev">
+    </div>
     <h1 class="login-card__title">Acessar admin</h1>
     <p class="login-card__lead">Entre com as credenciais definidas em <code>ADMIN_USERNAME</code> / <code>ADMIN_PASSWORD</code>.</p>
 
