@@ -49,14 +49,13 @@
 
     <section class="page-body">
       <div class="wrap">
-        <div class="terminal">
-          <div class="terminal__bar">
-            <div class="terminal__dots"><span></span><span></span><span></span></div>
-            <p class="terminal__title">root@melati: ~</p>
-          </div>
-          <div class="terminal__body" id="terminalBody">
-            <div class="terminal__line terminal__info">Conectando...</div>
-          </div>
+        <div class="skills-toolbar">
+          <input type="search" id="skillsSearch" class="skills-search" placeholder="Buscar skill ou categoria...">
+          <span class="skills-toolbar__count" id="skillsCount"></span>
+        </div>
+
+        <div class="skills-board" id="skillsBoard">
+          <p class="loading-state">Carregando...</p>
         </div>
       </div>
     </section>

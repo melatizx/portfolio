@@ -1,8 +1,3 @@
-/* ============================================================
-   API: helper simples de fetch para os endpoints do backend.
-   Como o front é servido pelo próprio Spring Boot (mesma origem),
-   não é preciso configurar CORS nem base URL.
-   ============================================================ */
 const Api = {
   async get(path) {
     const res = await fetch(path, {
