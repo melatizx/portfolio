@@ -183,39 +183,25 @@ a { color: inherit; text-decoration: none; }
 .mobile-link:hover { color: var(--blue-300); }
 .mobile-link.is-active { color: var(--blue-300); }
 
-.image-logo-melatidev {
-  width: 20%;
-  margin-top: 10px;
-}
-
 /* ============================================
-   Page header (banner no topo de cada página)
+   Section (loadpage): cada âncora ocupa a tela cheia,
+   como no scroll estilo Apple, e o conteúdo fica centralizado.
    ============================================ */
-.page-header {
-  padding: calc(var(--nav-height) + 64px) 0 56px;
+.section {
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  padding: 120px 0 80px;
   border-bottom: 1px solid var(--border);
 }
 
-.page-header__eyebrow {
-  font-size: 0.85rem;
-  color: var(--blue-300);
-  margin: 0 0 12px;
-}
+.section:last-of-type { border-bottom: none; }
 
-.page-header__title {
-  font-size: clamp(2.2rem, 5vw, 3.4rem);
-  font-weight: 700;
-  letter-spacing: -0.02em;
+.infos-portfolio {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
 }
-
-.page-header__lead {
-  margin: 18px 0 0;
-  max-width: 60ch;
-  color: var(--text-muted);
-  font-size: 1.05rem;
-}
-
-.page-body { padding: 64px 0 100px; }
 
 /* ============================================
    Hero (index.html)
@@ -330,46 +316,6 @@ a { color: inherit; text-decoration: none; }
   .hero__grid { padding: 32px 24px 48px; text-align: center; }
   .hero__content { max-width: none; margin: 0 auto; }
   .hero__terminal { justify-content: center; }
-}
-
-/* Grade de navegação rápida na home */
-.explore {
-  padding: 90px 0;
-}
-
-.explore__grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
-  gap: 1px;
-  background: var(--border);
-  border: 1px solid var(--border);
-}
-
-.explore__card {
-  background: var(--bg);
-  padding: 32px 28px;
-  display: flex;
-  flex-direction: column;
-  gap: 10px;
-  transition: background 0.25s ease;
-}
-
-.explore__card:hover { background: var(--bg-panel); }
-
-.explore__card-index {
-  font-family: var(--font-display);
-  font-size: 0.8rem;
-  color: var(--blue-400);
-}
-
-.explore__card-title {
-  font-size: 1.15rem;
-  font-weight: 600;
-}
-
-.explore__card-desc {
-  font-size: 0.9rem;
-  color: var(--text-muted);
 }
 
 /* ============================================
@@ -610,8 +556,7 @@ a:focus-visible, button:focus-visible {
   .navbar__links { display: none; }
   .hamburger { display: flex; }
   .wrap { padding: 0 24px; }
-  .page-header { padding: calc(var(--nav-height) + 44px) 0 40px; }
-  .page-body { padding: 48px 0 72px; }
+  .section { padding: calc(var(--nav-height) + 44px) 0 56px; }
   .timeline { padding-left: 24px; }
   .timeline__item::before { left: -36px; width: 20px; height: 20px; font-size: 0.62rem; }
 }

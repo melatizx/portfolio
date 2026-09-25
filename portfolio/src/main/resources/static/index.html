@@ -8,19 +8,19 @@
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="css/style.css">
-<link rel="icon" href="icons/melati-logo.png" type="image/png">
+<link rel="icon" href="icons-img/melati-logo.png" type="image/png">
 </head>
 <body>
 
   <header class="navbar" id="navbar">
     <div class="navbar__inner">
-      <a href="index.html" class="navbar__brand"><img src="icons/melati-logo.png" class="image-logo-melatidev"></a>
+      <a href="#hero" class="navbar__brand"><img src="icons/melati-logo.png" class="image-logo-melatidev"></a>
       <nav class="navbar__links">
-        <a href="about.html" class="nav-link">About Me</a>
-        <a href="skills.html" class="nav-link">Skills</a>
-        <a href="projects.html" class="nav-link">Projects</a>
-        <a href="experience.html" class="nav-link">Experience</a>
-        <a href="contact.html" class="nav-link">Contact</a>
+        <a href="#about" class="nav-link">About Me</a>
+        <a href="#skills" class="nav-link">Skills</a>
+        <a href="#projects" class="nav-link">Projects</a>
+        <a href="#experience" class="nav-link">Experience</a>
+        <a href="#contact" class="nav-link">Contact</a>
       </nav>
       <button class="hamburger" id="hamburger" aria-label="Abrir menu" aria-expanded="false" aria-controls="mobileMenu">
         <span></span><span></span><span></span>
@@ -30,19 +30,19 @@
 
   <div class="mobile-menu" id="mobileMenu">
     <nav class="mobile-menu__links">
-      <a href="about.html" class="mobile-link">About Me</a>
-      <a href="skills.html" class="mobile-link">Skills</a>
-      <a href="projects.html" class="mobile-link">Projects</a>
-      <a href="experience.html" class="mobile-link">Experience</a>
-      <a href="contact.html" class="mobile-link">Contact</a>
+      <a href="#about" class="mobile-link">About Me</a>
+      <a href="#skills" class="mobile-link">Skills</a>
+      <a href="#projects" class="mobile-link">Projects</a>
+      <a href="#experience" class="mobile-link">Experience</a>
+      <a href="#contact" class="mobile-link">Contact</a>
     </nav>
   </div>
 
   <main>
-    <section class="hero">
+    <section id="hero" class="hero">
       <div class="hero__servers" aria-hidden="true">
-        <img src="icons/hero-servers.png" alt="" class="hero__servers-img">
-
+        <img src="icons-img/hero-servers.png" alt="" class="hero__servers-img">
+ 
         <span class="server-photo__light server-photo__light--blue" style="left:79%; top:8%; animation-delay:0s"></span>
         <span class="server-photo__light server-photo__light--blue" style="left:79%; top:16%; animation-delay:0.6s"></span>
         <span class="server-photo__light server-photo__light--green" style="left:79%; top:24%; animation-delay:1.2s"></span>
@@ -50,28 +50,89 @@
         <span class="server-photo__light server-photo__light--blue" style="left:79%; top:40%; animation-delay:1.6s"></span>
         <span class="server-photo__light server-photo__light--green" style="left:79%; top:48%; animation-delay:0.9s"></span>
         <span class="server-photo__light server-photo__light--blue" style="left:79%; top:56%; animation-delay:0.2s"></span>
-
+ 
         <span class="server-photo__light server-photo__light--blue" style="left:90%; top:9%; animation-delay:0.8s"></span>
         <span class="server-photo__light server-photo__light--green" style="left:90%; top:18%; animation-delay:1.4s"></span>
         <span class="server-photo__light server-photo__light--blue" style="left:90%; top:27%; animation-delay:0.5s"></span>
         <span class="server-photo__light server-photo__light--blue" style="left:90%; top:36%; animation-delay:1.9s"></span>
         <span class="server-photo__light server-photo__light--green" style="left:90%; top:45%; animation-delay:1.1s"></span>
         <span class="server-photo__light server-photo__light--blue" style="left:90%; top:54%; animation-delay:0.4s"></span>
-        
+ 
       </div>
-
+ 
       <div class="hero__grid">
         <div class="hero__content">
           <h1 class="hero__name" id="heroName"></h1>
-
+ 
           <div class="hero__terminal">
             <span class="hero__terminal-prompt">root@melati:~$</span>
             <span class="hero__terminal-text" id="heroTypedRole"></span><span class="hero__terminal-cursor" aria-hidden="true"></span>
           </div>
-
+ 
           <p class="hero__tagline" id="heroTagline"></p>
         </div>
       </div>
+    </section>
+    <section class="infos-portfolio">
+      <section id="about" class="section about">
+        <div class="wrap">
+          <h2 class="section-title">About me</h2>
+          <div class="about__body" id="aboutBody">
+            <p class="loading-state">Carregando...</p>
+          </div>
+        </div>
+      </section>
+  
+      <section id="skills" class="section skills">
+        <div class="wrap">
+          <h2 class="section-title">Skills</h2>
+          <div class="skills-toolbar">
+            <input type="search" id="skillsSearch" class="skills-search" placeholder="Buscar skill ou categoria...">
+            <span class="skills-toolbar__count" id="skillsCount"></span>
+          </div>
+          <div class="skills-board" id="skillsBoard">
+            <p class="loading-state">Carregando...</p>
+          </div>
+        </div>
+      </section>
+  
+      <section id="projects" class="section projects">
+        <div class="wrap">
+          <h2 class="section-title">Projects</h2>
+          <div class="projects__list" id="projectsList">
+            <p class="loading-state">Carregando...</p>
+          </div>
+        </div>
+      </section>
+  
+      <section id="experience" class="section experience">
+        <div class="wrap">
+          <h2 class="section-title">Experience</h2>
+  
+          <div class="timeline-block">
+            <h3 class="timeline-block__title">Experiência Profissional</h3>
+            <div class="timeline" id="experienceTimeline">
+              <p class="loading-state">Carregando...</p>
+            </div>
+          </div>
+  
+          <div class="timeline-block">
+            <h3 class="timeline-block__title">Formação Acadêmica</h3>
+            <div class="timeline" id="educationTimeline">
+              <p class="loading-state">Carregando...</p>
+            </div>
+          </div>
+        </div>
+      </section>
+  
+      <section id="contact" class="section contact">
+        <div class="wrap">
+          <h2 class="section-title">Contact</h2>
+          <div class="contact__links" id="contactLinks">
+            <p class="loading-state">Carregando...</p>
+          </div>
+        </div>
+      </section>
     </section>
   </main>
 
@@ -81,6 +142,6 @@
 
   <script src="js/api.js"></script>
   <script src="js/nav.js"></script>
-  <script src="js/home.js"></script>
+  <script src="js/main.js"></script>
 </body>
 </html>

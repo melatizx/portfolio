@@ -1,13 +1,8 @@
 /* ============================================================
-   NAVEGAÇÃO: sombra ao rolar, hambúrguer mobile e link ativo
-   por página (endereçamento real: index.html, skills.html, ...)
+   NAVEGAÇÃO (loadpage): sombra ao rolar, hambúrguer mobile e
+   link ativo por seção visível (scroll-spy via IntersectionObserver).
    ============================================================ */
 (function () {
-
-  function currentPage() {
-    const path = window.location.pathname.split("/").pop();
-    return path === "" ? "index.html" : path;
-  }
 
   function initNavbarScrollState() {
     const navbar = document.getElementById("navbar");
@@ -17,12 +12,27 @@
     window.addEventListener("scroll", onScroll, { passive: true });
   }
 
-  function initActiveLink() {
-    const page = currentPage();
-    document.querySelectorAll(".nav-link, .mobile-link").forEach(link => {
-      const href = link.getAttribute("href");
-      link.classList.toggle("is-active", href === page);
-    });
+  function initScrollSpy() {
+    const sections = document.querySelectorAll("main .section[id]");
+    const navLinks = document.querySelectorAll(".nav-link, .mobile-link");
+    if (!sections.length) return;
+
+    const setActive = (id) => {
+      navLinks.forEach(link => {
+        link.classList.toggle("is-active", link.getAttribute("href") === `#${id}`);
+      });
+    };
+
+    const observer = new IntersectionObserver(
+      (entries) => {
+        entries.forEach(entry => {
+          if (entry.isIntersecting) setActive(entry.target.id);
+        });
+      },
+      { rootMargin: "-45% 0px -45% 0px", threshold: 0 }
+    );
+
+    sections.forEach(section => observer.observe(section));
   }
 
   function initMobileMenu() {
@@ -58,7 +68,7 @@
 
   document.addEventListener("DOMContentLoaded", () => {
     initNavbarScrollState();
-    initActiveLink();
+    initScrollSpy();
     initMobileMenu();
 
     const yearEl = document.getElementById("footerYear");
